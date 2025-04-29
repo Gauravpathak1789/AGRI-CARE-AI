@@ -1,3 +1,4 @@
+pip==24.0
 torch==2.6.0
 joblib==1.4.2
 markdown-it-py==3.0.0
@@ -14,4 +15,5 @@ xgboost==3.0.0
 numpy==1.26.4
 pandas==2.2.3
 scikit-learn==1.5.2
+
 
