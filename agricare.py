@@ -1,12 +1,18 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
+import xgboost 
 import joblib
-# from xgboost import XGBClassifier
 from ultralytics import YOLO
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
+import torch
+import warnings
 
+# Suppress the specific XGBoost warning
+warnings.filterwarnings("ignore", message=".*XGBoost.*")
+
+torch.classes.__path__ = []
 # ------------------ CONFIG & STYLE ------------------
 st.set_page_config(page_title="🌾 AgriCare AI", layout="centered", initial_sidebar_state="collapsed")
 
@@ -37,6 +43,7 @@ st.markdown("""
 st.title("🌿 AgriCare AI: Disease Detection, Soil & Smart Review Analyzer")
 
 # ------------------ LOAD MODELS ------------------
+bost = xgboost.Booster()
 try:
     disease_model = YOLO("best.pt")
     soil_model = joblib.load("soli_analysis.pkl")
