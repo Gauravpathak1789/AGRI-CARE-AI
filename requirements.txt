@@ -1,5 +1,5 @@
 pip==24.0
-libgl1
+libgl1-mesa-glx
 opencv-python-headless
 langchain-google-genai
 torch==2.6.0
