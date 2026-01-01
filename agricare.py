@@ -76,7 +76,7 @@ def detect_disease(image):
 #     return soil_labels[prediction], recommendations[prediction]
 
 def analyze_review_with_gemini_hindi(review_text):
-    GOOGLE_API_KEY = "AIzaSyDpSPuKbUUISuYSDdRKrBHaFoD7UCehpTA"
+    GOOGLE_API_KEY = "AIzaSyCq6x0j-S7W2RIwgapIL3sP08xyNyeUBKI"
     model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GOOGLE_API_KEY)
     prompt = f"""कृपया निम्नलिखित ग्राहक समीक्षा का विश्लेषण करें और इसे सरल हिंदी में संरचित तरीके से प्रस्तुत करें। मुख्य भावनाओं, सकारात्मक और नकारात्मक पहलुओं, और सुधार के सुझावों पर ध्यान केंद्रित करें।
 
@@ -90,7 +90,7 @@ def generate_hindi_gpt_advice(plant_name, disease_label):
     from langchain_google_genai import ChatGoogleGenerativeAI
     from langchain_core.messages import HumanMessage
 
-    GOOGLE_API_KEY = "AIzaSyDpSPuKbUUISuYSDdRKrBHaFoD7UCehpTA"
+    GOOGLE_API_KEY = "AIzaSyCq6x0j-S7W2RIwgapIL3sP08xyNyeUBKI"
     model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GOOGLE_API_KEY)
 
     prompt = (
@@ -155,7 +155,7 @@ def predict_soil_fertility_np(features_list):
     return soil_labels[prediction]
 
 def get_soil_recommendations_with_gemini(inputs, fertility_result):
-    GOOGLE_API_KEY = "AIzaSyDpSPuKbUUISuYSDdRKrBHaFoD7UCehpTA"
+    GOOGLE_API_KEY = "AIzaSyCq6x0j-S7W2RIwgapIL3sP08xyNyeUBKI"
     model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GOOGLE_API_KEY)
     input_str = ", ".join(f"{key}: {value}" for key, value in inputs.items())
     prompt = f"""आप एक विशेषज्ञ कृषि सलाहकार हैं। निम्नलिखित मिट्टी विश्लेषण इनपुट और अनुमानित उर्वरता स्तर पर विचार करते हुए, उपयोगकर्ता को विस्तृत और विशिष्ट सिफारिशें प्रदान करें। अपनी प्रतिक्रिया सरल हिंदी में दें।
